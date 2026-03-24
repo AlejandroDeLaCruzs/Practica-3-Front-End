@@ -20,6 +20,7 @@ export const ContextProvider = ({ children }: Params) => {
     const alredyInList = idsFavoritos.find((e) => item == e);
     if (alredyInList) return false;
     else {
+      console.log("AAA")
       setidsFavoritos([...idsFavoritos, item]);
       return true;
     }

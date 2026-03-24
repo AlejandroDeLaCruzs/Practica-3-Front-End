@@ -1,0 +1,55 @@
+.busquedaContiener {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #F5F5F5;
+  gap: 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  background-color: #3b5998;
+  color: white;
+  display: flex;
+  justify-content: center;
+  height: 60px;
+}
+
+.botonConteiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.inputSearch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.input {
+  width: 500px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.botonBuscar {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #1877f2;
+  color: white;
+  border-radius: 5px;
+}
+
+.albumsConteiner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 70px;
+ 
+}
