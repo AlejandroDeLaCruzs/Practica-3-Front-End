@@ -12,7 +12,7 @@ export const getAlbumsByName = async (name: string) => {
 
 export const getAlbumsById = async (id: string) => {
   try {
-    const respones = await api.get(`/search?term=${name}&entity=album&limit=20`);
+    const respones = await api.get(`/lookup?id=${id}&entity=song`);
     return respones.data.results;
   } catch (error) {
     console.log(error);
