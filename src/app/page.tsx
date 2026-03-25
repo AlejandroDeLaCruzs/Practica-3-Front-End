@@ -6,9 +6,6 @@ import "./page.css";
 export const Home = () => {
   return (
     <div>
-      <div className="header">
-        <p>Inicio</p>
-      </div>
       <div className="mainConteiner">
         <div className="titulo">
           <h1>Music Albums App</h1>

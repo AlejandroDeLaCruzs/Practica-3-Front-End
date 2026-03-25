@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   gap: 60px;
-  background-image: url("/foto_concierto.jpg");
+  background-image: url("/photo-1459749411175-04bf5292ceea.avif");
   background-size: cover;
 }
 .titulo {
@@ -26,7 +26,7 @@
 }
 
 .opciones {
-  height: 45px;
+  height: 55px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -41,10 +41,10 @@
   align-items: center;
   justify-content: center;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 16px;
   height: 100%;
-  width: 150px;
-  background-color: red;
+  width: 200px;
+  background-color: rgba(0,0,0,0.7);
 }
 
 .opciones .albums {
@@ -53,8 +53,8 @@
   align-items: center;
   justify-content: center;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 16px;
   height: 100%;
-  width: 150px;
-  background-color: rgb(8, 0, 255);
+  width: 200px;
+  background-color: #7C3AED;
 }

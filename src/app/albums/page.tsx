@@ -5,17 +5,20 @@ import { Album } from "@/types";
 import { useState } from "react";
 import { AlbumBox } from "../components/albumBox";
 import "./albums.css";
-import Link from "next/link";
+
+/*TODO:
+  -añadir un boton para ir al home 
+  -mejorar colores de los botones*/
 
 const AlbumsSearch = () => {
   const { idsFavoritos } = useLista();
   const [albums, setAlbums] = useState<Album[] | null>(null);
   const [input, setInput] = useState<string>("");
+
   console.log(idsFavoritos);
+
   const fetchDataAlbums = () => {
-    if (input != "") {
-      getAlbumsByName(input).then((res) => setAlbums(res));
-    }
+    getAlbumsByName(input).then((res) => setAlbums(res));
   };
 
   return (

@@ -1,9 +1,7 @@
 .busquedaContiener {
   display: flex;
-  width: 100vw;
-  height: 100vh;
   flex-direction: column;
-  background-color: #F5F5F5;
+  background-color: #0C0C0C;
   gap: 40px;
 }
 
@@ -11,7 +9,6 @@
   display: flex;
   align-items: center;
   font-size: 40px;
-  background-color: #3b5998;
   color: white;
   display: flex;
   justify-content: center;
@@ -36,6 +33,7 @@
   width: 500px;
   height: 40px;
   font-size: 20px;
+  border-radius: 13px;
 }
 
 .botonBuscar {
@@ -49,7 +47,7 @@
 
 .albumsConteiner {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 70px;
  
 }

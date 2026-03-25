@@ -1,7 +1,18 @@
+"use client"
+import { useParams } from "next/navigation";
+import { useEffect } from "react";
 
 
-export const AlbumId = () => {
-    return (
-        <h1>detalles del album</h1>
-    )
-}
+const AlbumId = () => {
+  const {id} = useParams();
+  useEffect(() => {
+    
+
+
+  }, [id])
+  return (
+<h1>hola</h1>
+  );
+};
+
+export default AlbumId;
