@@ -43,6 +43,7 @@ export default function AlbumDetail() {
 
   const album = albumData[0]; // informacion del álbum
   const tracks = albumData.slice(1); // las canciones
+  console.log(tracks);
 
   return (
     <div className="albumpage">

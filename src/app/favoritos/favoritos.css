@@ -1,0 +1,68 @@
+.container {
+  background-color: #000;
+  min-height: 100vh;
+  padding: 20px;
+  color: #fff;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.empty {
+  color: #888;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.card {
+  background-color: #181818;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.album {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.artist {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.btn-delete {
+  background: red;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: rgba(255, 0, 0, 0.66);
+}

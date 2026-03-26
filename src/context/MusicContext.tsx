@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import { createContext, useContext, useState } from "react";
 
 type ContextListaType = {
   idsFavoritos: string[];
-  addFavorite: (item: string) => boolean;
-  deleteFavorite: (item: string) => boolean;
+  addFavorite: (item: string) => void;
+  deleteFavorite: (item: string) => void;
 };
 
 const Listacontext = createContext<ContextListaType | null>(null);
@@ -18,35 +18,32 @@ export const ContextProvider = ({ children }: Params) => {
 
   const addFavorite = (item: string) => {
     const alredyInList = idsFavoritos.find((e) => item == e);
-    if (alredyInList) return false;
+    if (alredyInList) return;
     else {
-      console.log("AAA")
+      console.log("AAA");
       setidsFavoritos([...idsFavoritos, item]);
-      return true;
     }
   };
 
   const deleteFavorite = (item: string) => {
-    const notInList = idsFavoritos.find((e) => item == e);
-    if (!notInList) return false;
-    else {
-      setidsFavoritos([...idsFavoritos, item]);
-      return true;
-    }
+    const notInList = idsFavoritos.filter((e) => item !== e);
+    setidsFavoritos([...notInList]);
+
   };
 
   return (
-    <Listacontext.Provider value={{ idsFavoritos, addFavorite, deleteFavorite }}>
+    <Listacontext.Provider
+      value={{ idsFavoritos, addFavorite, deleteFavorite }}
+    >
       {children}
     </Listacontext.Provider>
   );
 };
 
-
 export const useLista = () => {
-    const context = useContext(Listacontext);
-    if(!context) {
-        throw new Error ("No puedes acceder al contexto");
-    }
-    return context;
-}
+  const context = useContext(Listacontext);
+  if (!context) {
+    throw new Error("No puedes acceder al contexto");
+  }
+  return context;
+};

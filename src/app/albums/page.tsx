@@ -1,5 +1,5 @@
 "use client";
-import { useLista } from "@/context/MusicContext";
+
 import { getAlbumsByName, getIdCantante } from "@/lib/albums";
 import { Album } from "@/types";
 import { useState } from "react";
@@ -16,7 +16,6 @@ const AlbumsSearch = () => {
 
   const fetchDataAlbums = async () => {
     const id = await getIdCantante(input);
-    console.log(id);
     getAlbumsByName(id).then((res) =>
       setAlbums(
         res?.filter((e) => e.collectionType === "Album" && e.trackCount >= 5),
