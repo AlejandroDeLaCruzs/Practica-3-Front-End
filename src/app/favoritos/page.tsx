@@ -1,6 +1,11 @@
 "use client"
 import { useLista } from "@/context/MusicContext";
 
+
+/*
+TODO: 
+-ponerlo bonito
+*/
 const FavoritosPage = () => {
   const { idsFavoritos } = useLista();
   console.log(idsFavoritos);

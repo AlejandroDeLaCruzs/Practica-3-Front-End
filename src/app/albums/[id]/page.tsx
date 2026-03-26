@@ -2,10 +2,14 @@
 
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { Album } from "@/types";
 import "./albumDetail.css";
 import { getAlbumsById } from "@/lib/albums";
+
+/*TODO: 
+  -añadir boton para ir para atras y mirar el replace del foto del disco
+  -crear componente de hedaer de Cancion y de track
+*/
 
 export default function AlbumDetail() {
   const { id } = useParams();

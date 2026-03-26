@@ -1,6 +1,6 @@
 "use client";
 import { useLista } from "@/context/MusicContext";
-import { getAlbumsByName } from "@/lib/albums";
+import { getAlbumsByName, getIdCantante } from "@/lib/albums";
 import { Album } from "@/types";
 import { useState } from "react";
 import { AlbumBox } from "../components/albumBox";
@@ -11,14 +11,17 @@ import "./albums.css";
   -mejorar colores de los botones*/
 
 const AlbumsSearch = () => {
-  const { idsFavoritos } = useLista();
   const [albums, setAlbums] = useState<Album[] | null>(null);
   const [input, setInput] = useState<string>("");
 
-  console.log(idsFavoritos);
-
-  const fetchDataAlbums = () => {
-    getAlbumsByName(input).then((res) => setAlbums(res));
+  const fetchDataAlbums = async () => {
+    const id = await getIdCantante(input);
+    console.log(id);
+    getAlbumsByName(id).then((res) =>
+      setAlbums(
+        res?.filter((e) => e.collectionType === "Album" && e.trackCount >= 5),
+      ),
+    );
   };
 
   return (
