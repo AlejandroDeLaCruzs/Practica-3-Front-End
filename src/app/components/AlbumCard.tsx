@@ -1,6 +1,6 @@
 import './AlbumCard.css';
 
-interface Props {
+type Params = {
   album: {
     collectionId: number;
     artworkUrl100: string;
@@ -11,7 +11,7 @@ interface Props {
   onDelete: (id: string) => void;
 }
 
-export default function AlbumCard({ album, onDelete }: Props) {
+export default function AlbumCard({ album, onDelete }: Params) {
   return (
     <div className="card">
       <div>
