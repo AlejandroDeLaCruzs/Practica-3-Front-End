@@ -7,8 +7,7 @@ import { AlbumBox } from "../components/albumBox";
 import "./albums.css";
 
 /*TODO:
-  -añadir un boton para ir al home 
-  -indicar que hay buscar aritista, y que cuando presione enter se busque, y que vaya buscando cada 500 ms
+  que busque cada 500 ms
 */
 
 const AlbumsSearch = () => {

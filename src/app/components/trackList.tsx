@@ -1,4 +1,3 @@
-
 import "./trackList.css";
 
 type Track = {

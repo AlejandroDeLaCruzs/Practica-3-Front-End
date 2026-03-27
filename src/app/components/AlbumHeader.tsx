@@ -1,4 +1,4 @@
-import "./AlbumHeader.css"
+import "./AlbumHeader.css";
 
 type Album = {
   artworkUrl100: string;
@@ -14,11 +14,10 @@ type Params = {
 };
 
 export const AlbumHeader = ({ album }: Params) => {
-
   //Para hacer la portada mas grande y que se vea mejor con mas pixeles
   const portadaAlbum = album.artworkUrl100?.replace(
     "100x100bb.jpg",
-    "600x600bb.jpg"
+    "600x600bb.jpg",
   );
 
   const year = new Date(album.releaseDate).getFullYear();

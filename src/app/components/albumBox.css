@@ -40,7 +40,6 @@
   color: #cccccc;
 }
 
-
 .botonContainer {
   display: flex;
   flex-direction: row;
@@ -48,9 +47,8 @@
   align-items: center;
 }
 
-
 .botonVerDetalle {
-  background-color: #7c3aed; 
+  background-color: #7c3aed;
   color: white;
   border: none;
   padding: 10px;

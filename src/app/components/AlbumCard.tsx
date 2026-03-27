@@ -1,4 +1,4 @@
-import './AlbumCard.css';
+import "./AlbumCard.css";
 
 type Params = {
   album: {
@@ -9,7 +9,7 @@ type Params = {
     trackCount: number;
   };
   onDelete: (id: string) => void;
-}
+};
 
 export default function AlbumCard({ album, onDelete }: Params) {
   return (

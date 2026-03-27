@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useLista } from "@/context/MusicContext";
 import "./albumBox.css";
@@ -16,29 +16,18 @@ export const AlbumBox = ({ id, image, album, cantante }: Params) => {
 
   return (
     <div className="albumContainer">
-      <img 
-        src={image} 
-        alt={album} 
-        className="albumFoto" 
-      />
+      <img src={image} alt={album} className="albumFoto" />
 
       <div className="infoAlbum">
         <h2>{album}</h2>
         <p>{cantante}</p>
-        
       </div>
 
       <div className="botonContainer">
         <Link href={`/albums/${id}`}>
-          <button className="botonVerDetalle">
-            Ver Detalle
-          </button>
+          <button className="botonVerDetalle">Ver Detalle</button>
         </Link>
-
-        <button 
-          onClick={() => addFavorite(id)} 
-          className="botonFavoritos"
-        >
+        <button onClick={() => addFavorite(id)} className="botonFavoritos">
           ❤️ Favorito
         </button>
       </div>
