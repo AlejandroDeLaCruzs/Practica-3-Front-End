@@ -9,6 +9,7 @@ import AlbumCard from "../components/AlbumCard";
 const FavoritosPage = () => {
   const { idsFavoritos, deleteFavorite } = useLista();
   const [albumsFavoritos, setAlbumsFavoritos] = useState<Album[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchAlbums = async () => {
@@ -27,11 +28,17 @@ const FavoritosPage = () => {
         setAlbumsFavoritos(albums);
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchAlbums();
   }, [idsFavoritos]);
+
+  if (loading) {
+    return <h1 className="loading">Cargando...</h1>;
+  }
 
   return (
     <div className="containerPageFavoritos">

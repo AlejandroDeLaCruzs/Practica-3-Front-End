@@ -20,3 +20,11 @@
   gap: 20px;
 }
 
+.loading {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
