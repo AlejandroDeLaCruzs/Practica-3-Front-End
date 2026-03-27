@@ -23,8 +23,9 @@ export const AlbumBox = ({ id, image, album, cantante }: Params) => {
       />
 
       <div className="infoAlbum">
-        <h2>{cantante}</h2>
-        <p>{album}</p>
+        <h2>{album}</h2>
+        <p>{cantante}</p>
+        
       </div>
 
       <div className="botonContainer">

@@ -1,15 +1,14 @@
 "use client";
 import { useLista } from "@/context/MusicContext";
-import { getAlbumsById } from "@/lib/albums";
+import { getTracks } from "@/lib/albums";
 import { Album } from "@/types";
 import { useEffect, useState } from "react";
 import "./favoritos.css";
+import AlbumCard from "../components/AlbumCard";
 
 const FavoritosPage = () => {
   const { idsFavoritos, deleteFavorite } = useLista();
   const [albumsFavoritos, setAlbumsFavoritos] = useState<Album[]>([]);
-  console.log(idsFavoritos);
-  const ids = idsFavoritos;
 
   useEffect(() => {
     const fetchAlbums = async () => {
@@ -17,7 +16,7 @@ const FavoritosPage = () => {
         const albums = await Promise.all(
           idsFavoritos.map(async (id) => {
             try {
-              const res = await getAlbumsById(id);
+              const res = await getTracks(id);
               console.log(res.at(0));
               return res.at(0) || null;
             } catch {
@@ -25,7 +24,6 @@ const FavoritosPage = () => {
             }
           }),
         );
-        console.log(albums);
         setAlbumsFavoritos(albums);
       } catch (error) {
         console.error(error);
@@ -36,35 +34,19 @@ const FavoritosPage = () => {
   }, [idsFavoritos]);
 
   return (
-    <div className="container">
+    <div className="containerPageFavoritos">
       <h1 className="title">🎵 Tus Favoritos</h1>
 
       {albumsFavoritos.length === 0 ? (
         <p className="empty">No tienes álbumes favoritos aún</p>
       ) : (
-        <div className="grid">
+        <div className="conteinerFavoritos">
           {albumsFavoritos.map((album) => (
-            <div key={album.collectionId} className="card">
-              <img
-                src={album.artworkUrl100}
-                alt={album.collectionName}
-                className="image"
-              />
-
-              <h2 className="album">{album.collectionName}</h2>
-              <p className="artist">{album.artistName}</p>
-
-              <div className="footer">
-                <span>{album.trackCount} canciones</span>
-
-                <button
-                  onClick={() => deleteFavorite(String(album.collectionId))}
-                  className="btn-delete"
-                >
-                  Eliminar
-                </button>
-              </div>
-            </div>
+            <AlbumCard
+              key={album.collectionId}
+              album={album}
+              onDelete={deleteFavorite}
+            />
           ))}
         </div>
       )}

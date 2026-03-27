@@ -1,9 +1,12 @@
 import { api } from "./api";
 
-export const getIdCantante = async (name: string) => {
+export const getIdsCantante = async (name: string) => {
   try {
-    const respone = await api.get(`/search?term=${(name)}&entity=musicArtist&limit=1`);
-    return respone.data.results.at(0).artistId;
+    const respone = await api.get(
+      `/search?term=${name}&entity=musicArtist&limit=5`,
+    );
+    const ids = respone.data.results.map((e) => e.artistId);
+    return ids;
   } catch (error) {
     console.log(error);
   }
@@ -11,7 +14,7 @@ export const getIdCantante = async (name: string) => {
 
 export const getAlbumsByName = async (id: string) => {
   try {
-    const respones = await api.get(`/lookup?id=${id}&entity=album&limit=50`);
+    const respones = await api.get(`/lookup?id=${id}&entity=album&limit=10`);
     return respones.data.results;
   } catch (error) {
     console.log(error);
@@ -22,7 +25,7 @@ export const getAlbumsByName = async (id: string) => {
 TODO:
 Hay algunos que tracks que no salen dependiendo del pais
 */
-export const getAlbumsById = async (id: string) => {
+export const getTracks = async (id: string) => {
   try {
     const respones = await api.get(`/lookup?id=${id}&entity=song`);
     return respones.data.results;

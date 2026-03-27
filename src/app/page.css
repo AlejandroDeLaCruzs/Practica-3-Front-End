@@ -1,14 +1,3 @@
-.header {
-  display: flex;
-  align-items: center;
-  font-size: 40px;
-  background-color: #3b5998;
-  color: white;
-  display: flex;
-  justify-content: center;
-  height: 50px;
-}
-
 .mainConteiner {
   width: 100vw;
   height: 100vh;
@@ -20,6 +9,7 @@
   background-image: url("/photo-1459749411175-04bf5292ceea.avif");
   background-size: cover;
 }
+
 .titulo {
   font-size: 40px;
   color: white;
@@ -44,7 +34,7 @@
   border-radius: 16px;
   height: 100%;
   width: 200px;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .opciones .albums {
@@ -56,5 +46,5 @@
   border-radius: 16px;
   height: 100%;
   width: 200px;
-  background-color: #7C3AED;
+  background-color: #7c3aed;
 }
