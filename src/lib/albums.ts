@@ -12,7 +12,7 @@ export const getIdsCantante = async (name: string) => {
   }
 };
 
-export const getAlbumsByName = async (id: string) => {
+export const getAlbumsById = async (id: string) => {
   try {
     const respones = await api.get(`/lookup?id=${id}&entity=album&limit=10`);
     return respones.data.results;

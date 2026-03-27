@@ -1,0 +1,9 @@
+.headerMenu {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    color: white;
+    position: absolute;
+    left: 1;
+
+}

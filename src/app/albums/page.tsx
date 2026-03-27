@@ -1,6 +1,6 @@
 "use client";
 
-import { getIdsCantante, getAlbumsByName } from "@/lib/albums";
+import { getIdsCantante, getAlbumsById } from "@/lib/albums";
 import { Album } from "@/types";
 import { useState } from "react";
 import { AlbumBox } from "../components/albumBox";
@@ -18,14 +18,14 @@ const AlbumsSearch = () => {
   const fetchDataAlbums = async () => {
     const ids = await getIdsCantante(input);
 
-    const results = await Promise.all(ids.map((id) => getAlbumsByName(id)));
+    const results = await Promise.all(ids.map((id) => getAlbumsById(id)));
 
     // Se hace flat pq results es un array bidimensional: por cada artista x albums
     const albums = results
       .flat()
       .filter((e: Album) => e.collectionType === "Album" && e.trackCount >= 5);
 
-    console.log("aa", albums);
+    console.log("Albums", albums);
 
     setAlbums(albums);
   };

@@ -28,7 +28,6 @@ export const ContextProvider = ({ children }: Params) => {
   const deleteFavorite = (item: string) => {
     const notInList = idsFavoritos.filter((e) => item !== e);
     setidsFavoritos([...notInList]);
-
   };
 
   return (

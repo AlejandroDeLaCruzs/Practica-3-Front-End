@@ -9,11 +9,11 @@ type Album = {
   trackCount: number;
 };
 
-type Props = {
+type Params = {
   album: Album;
 };
 
-export const AlbumHeader = ({ album }: Props) => {
+export const AlbumHeader = ({ album }: Params) => {
 
   //Para hacer la portada mas grande y que se vea mejor con mas pixeles
   const portadaAlbum = album.artworkUrl100?.replace(
