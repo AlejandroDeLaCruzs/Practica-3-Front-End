@@ -1,11 +1,13 @@
 import { api } from "./api";
-
+type Cantante = {
+  artistId: string;
+};
 export const getIdsCantante = async (name: string) => {
   try {
     const respone = await api.get(
       `/search?term=${name}&entity=musicArtist&limit=5`,
     );
-    const ids = respone.data.results.map((e) => e.artistId);
+    const ids = respone.data.results.map((e: Cantante) => e.artistId);
     return ids;
   } catch (error) {
     console.log(error);
